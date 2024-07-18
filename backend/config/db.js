@@ -1,17 +1,18 @@
 // productivity/ backend / config / db.js
 
-const express = require('express');                                 // Import the express module
-const dotenv = require('dotenv');                                   // Import the dotenv module,loads environment variables from a .env file into process.env.
-const connectDB = require('./config/db');                           // Import the connectDB function from the db.js file in the config directory. 
-const eventRoutes = require('./routes/eventRoutes');                // Import the eventRoutes module from the eventRoutes.js file in the routes directory. This module contains the routes for handling event-related requests.
+const mongoose = require('mongoose');                                   // Import the mongoose module to interact with MongoDB. 
 
-dotenv.config();                                                    // load env variables from .env file 
-connectDB();                                                        // connectDB function called to connect to DB 
+const connectDB = async () => {                                         // Define an asynchronous function called connectDB. 
+    try {                                                               // use try-catch block to handle errors
+        const conn = await mongoose.connect(process.env.MONGO_URI, {    // use mongoose.connect() to connect to the MongoDB database.
+            useNewUrlParser: true,                                      // pass in the MongoDB URI from the .env file.
+            useUnifiedTopology: true,                                   // pass in an object with the useNewUrlParser and useUnifiedTopology options set to true.
+        });
+        console.log(`MongoDB Connected: ${conn.connection.host}`);      // If the connection is successful, log a message to the console with the host of the connection.
+    } catch (error) {                                                   // If an error occurs, catch the error and log an error message to the console.
+        console.error(`Error: ${error.message}`);                       // Log the error message to the console.
+        process.exit(1);                                                // Exit the process with an error code of 1.
+    }
+}; 
 
-const app = express();                                              // create express instance 
-app.use(express.json());                                            // use express.json
-
-app.use('api/events', eventRoutes);                                 // mount eventRoutes module so any requests will be handled by the routes in file 
-
-const PORT = process.env.PORT || 5000;                              // define port number 
-app.listen(PORT, console.log(`Server running on port ${PORT}`));    // start server  
+module.exports = connectDB;                                             // Export the connectDB function to make it accessible in other files.
