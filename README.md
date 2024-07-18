@@ -1,38 +1,38 @@
 # productivity
 
-calendar-app/
-├── backend/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   └── eventController.js
-│   ├── models/
-│   │   └── Event.js
-│   ├── routes/
-│   │   └── eventRoutes.js
-│   ├── middleware/
-│   │   └── authMiddleware.js
-│   ├── utils/
-│   │   └── errorHandler.js
-│   ├── .env
-│   ├── server.js
-│   ├── package.json
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Calendar.js
-│   │   │   ├── EventForm.js
-│   │   │   ├── EventList.js
-│   │   ├── pages/
-│   │   │   ├── HomePage.js
-│   │   ├── context/
-│   │   │   └── EventContext.js
-│   │   ├── utils/
-│   │   │   └── api.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   ├── .env
-│   ├── package.json
-├── .gitignore
-├── README.md
+calendar-app/ <br/>
+├── backend/ <br/>
+│   ├── config/ <br/>
+│   │   └── db.js <br/>
+│   ├── controllers/ <br/>
+│   │   └── eventController.js <br/>
+│   ├── models/ <br/>
+│   │   └── Event.js <br/>
+│   ├── routes/ <br/>
+│   │   └── eventRoutes.js <br/>
+│   ├── middleware/ <br/>
+│   │   └── authMiddleware.js <br/>
+│   ├── utils/ <br/>
+│   │   └── errorHandler.js <br/>
+│   ├── .env <br/>
+│   ├── server.js <br/>
+│   ├── package.json <br/>
+├── frontend/ <br/>
+│   ├── public/ <br/>
+│   ├── src/ <br/>
+│   │   ├── components/ <br/>
+│   │   │   ├── Calendar.js <br/>
+│   │   │   ├── EventForm.js <br/>
+│   │   │   ├── EventList.js <br/>
+│   │   ├── pages/ <br/>
+│   │   │   ├── HomePage.js <br/>
+│   │   ├── context/ <br/>
+│   │   │   └── EventContext.js <br/>
+│   │   ├── utils/ <br/>
+│   │   │   └── api.js <br/>
+│   │   ├── App.js <br/>
+│   │   ├── index.js <br/>
+│   ├── .env <br/>
+│   ├── package.json <br/>
+├── .gitignore <br/>
+├── README.md <br/>
